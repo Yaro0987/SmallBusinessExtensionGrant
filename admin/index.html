@@ -189,13 +189,30 @@ table th,table td{padding:8px 10px;white-space:nowrap}
 .action-dropdown{position:fixed;left:50%!important;right:auto!important;top:auto!important;bottom:80px;transform:translateX(-50%);min-width:200px;text-align:center}
 }
 @media(max-width:480px){
-.stats-grid{grid-template-columns:1fr}
+.stats-grid{grid-template-columns:1fr;gap:12px}
 .main-content{padding:12px}
 .chart-wrap{padding:16px}
-.stat-card{padding:18px}
+.chart-wrap h3{font-size:13px}
+.stat-card{padding:16px}
 .stat-card h3{font-size:22px}
+.stat-card p{font-size:11px}
+.stat-card .stat-icon{top:16px;right:16px;font-size:22px}
 .modal-box{margin:10px}
 .modal-body{padding:16px}
+.admin-header{padding:0 12px}
+.admin-header .ah-title{font-size:13px;min-width:auto}
+}
+@media(max-width:360px){
+.main-content{padding:8px}
+.stat-card{padding:12px}
+.stat-card h3{font-size:18px}
+.chart-wrap{padding:12px}
+.chart-wrap h3{font-size:12px;margin-bottom:10px}
+.admin-header{padding:0 8px;height:48px}
+.admin-header .ah-title{font-size:12px}
+.table-wrap .tbl-header{padding:10px 14px}
+.table-wrap .tbl-header h3{font-size:12px}
+table th,table td{padding:6px 8px;font-size:11px}
 }
 
 /* Search popup */
@@ -243,6 +260,7 @@ table th,table td{padding:8px 10px;white-space:nowrap}
         support: { title: 'Support - Admin - Small Business Expansion Grant', desc: 'View and respond to user support requests. Manage support tickets submitted through the public support page.', keywords: 'support tickets, user support, ticket management, customer inquiries' }
     };
 
+    function debounce(fn, ms) { var t; return function(){ clearTimeout(t); t = setTimeout(fn, ms); }; }
     function getAuth() { try { return JSON.parse(localStorage.getItem(AUTH_KEY)); } catch (e) { return null; } }
     function setAuth(d) { localStorage.setItem(AUTH_KEY, JSON.stringify(d)); }
     function clearAuth() { localStorage.removeItem(AUTH_KEY); }
@@ -552,11 +570,14 @@ table th,table td{padding:8px 10px;white-space:nowrap}
     });
 
     // === DASHBOARD ===
-    function initDashboard() {
+    var _dashData = null, _dashUsers = null;
+
+    function initDashboard(noResize) {
         Promise.all([
             fetch('../data/application.json').then(function(r){return r.json()}).catch(function(){return{}}),
             fetch('../data/user.json').then(function(r){return r.json()}).catch(function(){return[]})
         ]).then(function(results){
+            if (!noResize) { _dashData = results[0]; _dashUsers = results[1]; }
             var d = results[0], users = results[1];
             var total = 0, pending = 0, approved = 0, denied = 0, review = 0, funding = 0;
             if(users && users.length){
@@ -584,6 +605,11 @@ table th,table td{padding:8px 10px;white-space:nowrap}
             drawStatusChart({ approved: approved, pending: pending, review: review, denied: denied });
             drawGrantTypeChart(users);
             drawMonthlyChart(d);
+            if (!noResize) {
+                if (window._dashResize) window.removeEventListener('resize', window._dashResize);
+                window._dashResize = debounce(function(){ initDashboard(true); }, 400);
+                window.addEventListener('resize', window._dashResize);
+            }
 
             var recent = d.recent_submissions || [];
             if (recent.length) {
