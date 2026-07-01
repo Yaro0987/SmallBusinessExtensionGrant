@@ -1,0 +1,55 @@
+{
+  "total_submissions": 156,
+  "pending_review": 23,
+  "approved": 89,
+  "denied": 44,
+  "total_funding_awarded": 2450000,
+  "average_processing_days": 3.5,
+  "recent_submissions": [
+    {
+      "appId": "SBG-APP-2026-10123",
+      "fullname": "Sarah Williams",
+      "business": "Williams Consulting",
+      "grant_type": "small-business",
+      "amount": 25000,
+      "status": "pending",
+      "submitted": "2026-06-30"
+    },
+    {
+      "appId": "SBG-APP-2026-10124",
+      "fullname": "Michael Chen",
+      "business": "Chen Tech Solutions",
+      "grant_type": "innovation",
+      "amount": 75000,
+      "status": "review",
+      "submitted": "2026-06-29"
+    },
+    {
+      "appId": "SBG-APP-2026-10125",
+      "fullname": "Emily Davis",
+      "business": "Davis Crafts Co.",
+      "grant_type": "startup",
+      "amount": 5000,
+      "status": "approved",
+      "submitted": "2026-06-25"
+    },
+    {
+      "appId": "SBG-APP-2026-10126",
+      "fullname": "James Wilson",
+      "business": "Wilson Landscaping",
+      "grant_type": "small-business",
+      "amount": 15000,
+      "status": "pending",
+      "submitted": "2026-07-01"
+    },
+    {
+      "appId": "SBG-APP-2026-10127",
+      "fullname": "Amanda Torres",
+      "business": "Torres Creative Agency",
+      "grant_type": "innovation",
+      "amount": 35000,
+      "status": "denied",
+      "submitted": "2026-06-18"
+    }
+  ]
+}

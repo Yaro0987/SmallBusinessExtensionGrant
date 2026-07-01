@@ -1,0 +1,22 @@
+<div class="stats-grid">
+<div class="stat-card"><i class="fas fa-file-alt stat-icon"></i><h3 id="statTotal">0</h3><p>Total Applications</p></div>
+<div class="stat-card"><i class="fas fa-clock stat-icon"></i><h3 id="statPending">0</h3><p>Pending Review</p></div>
+<div class="stat-card"><i class="fas fa-check-circle stat-icon"></i><h3 id="statApproved">0</h3><p>Approved</p></div>
+<div class="stat-card"><i class="fas fa-dollar-sign stat-icon"></i><h3 id="statAwarded">$0</h3><p>Total Funding Awarded</p></div>
+<div class="stat-card"><i class="fas fa-times-circle stat-icon"></i><h3 id="statDenied">0</h3><p>Declined</p></div>
+<div class="stat-card"><i class="fas fa-sync-alt stat-icon"></i><h3 id="statReview">0</h3><p>Under Review</p></div>
+<div class="stat-card"><i class="fas fa-chart-line stat-icon"></i><h3 id="statAvgAmount">$0</h3><p>Avg. Amount Requested</p></div>
+</div>
+
+<div class="charts-grid">
+<div class="chart-wrap"><h3>Application Status Distribution</h3><canvas id="activityChart" style="width:100%;height:160px;"></canvas></div>
+<div class="chart-wrap"><h3>Grant Type Distribution</h3><canvas id="grantTypeChart" style="width:100%;height:160px;"></canvas></div>
+<div class="chart-wrap"><h3>Monthly Activity</h3><canvas id="monthlyChart" style="width:100%;height:160px;"></canvas></div>
+<div class="chart-wrap"><h3>Current Status Overview</h3><canvas id="activityChart2" style="width:100%;height:160px;"></canvas></div>
+</div>
+
+<div class="table-wrap">
+<div class="tbl-header"><h3>Recent Submissions</h3><a href="#" class="btn btn-outline" data-admin-page="submissions">View All</a></div>
+<div class="empty-state" id="dashSubEmpty"><i class="fas fa-inbox"></i><p>No submissions yet.</p></div>
+<div style="display:none;" id="dashSubTable"><table><thead><tr><th>ID</th><th>Name</th><th>Grant</th><th>Status</th><th>Date</th></tr></thead><tbody id="dashSubBody"></tbody></table></div>
+</div>

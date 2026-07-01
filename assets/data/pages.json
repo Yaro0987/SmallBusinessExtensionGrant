@@ -1,0 +1,77 @@
+{
+  "pages": [
+    {
+      "id": "home",
+      "name": "Home",
+      "slug": "home",
+      "sections": [
+        { "name": "Hero Section", "content": "<p>Welcome to Small Business Expansion Grant. We provide free grant funding for your business with no repayment required.</p>" },
+        { "name": "How It Works", "content": "<p>Apply online in minutes. Get reviewed within 24 hours. Receive funding directly to your account.</p>" }
+      ],
+      "inHeader": true,
+      "inFooter": true
+    },
+    {
+      "id": "apply",
+      "name": "Apply",
+      "slug": "apply",
+      "sections": [
+        { "name": "Application Form", "content": "<p>Complete the form below to apply for grant funding. Fill in your business details and submit.</p>" }
+      ],
+      "inHeader": true,
+      "inFooter": true
+    },
+    {
+      "id": "tracking",
+      "name": "Track Application",
+      "slug": "tracking",
+      "sections": [
+        { "name": "Track Your Application", "content": "<p>Enter your Application ID to check the status of your grant application.</p>" }
+      ],
+      "inHeader": true,
+      "inFooter": true
+    },
+    {
+      "id": "contact",
+      "name": "Contact",
+      "slug": "contact",
+      "sections": [
+        { "name": "Contact Information", "content": "<p>Get in touch with our team for questions about grant programs and application assistance.</p>" }
+      ],
+      "inHeader": true,
+      "inFooter": true
+    }
+  ],
+  "programs": [
+    {
+      "id": "startup-grant",
+      "name": "Startup Grant",
+      "slug": "startup-grant",
+      "sections": [
+        { "name": "About the Startup Grant", "content": "<p>Funding for new businesses looking to get off the ground. Up to $25,000 available.</p>" }
+      ],
+      "inHeader": false,
+      "inFooter": true
+    },
+    {
+      "id": "innovation-grant",
+      "name": "Innovation Grant",
+      "slug": "innovation-grant",
+      "sections": [
+        { "name": "About the Innovation Grant", "content": "<p>For businesses developing new products, services, or technologies. Up to $100,000 available.</p>" }
+      ],
+      "inHeader": false,
+      "inFooter": true
+    },
+    {
+      "id": "community-grant",
+      "name": "Community Grant",
+      "slug": "community-grant",
+      "sections": [
+        { "name": "About the Community Grant", "content": "<p>Supporting local businesses that contribute to community development. Up to $15,000 available.</p>" }
+      ],
+      "inHeader": false,
+      "inFooter": true
+    }
+  ]
+}

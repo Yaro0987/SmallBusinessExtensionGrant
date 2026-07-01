@@ -1,0 +1,246 @@
+<div class="editor-tabs">
+<button class="etab active" data-tab="pages">Custom Pages</button>
+<button class="etab" data-tab="programs">Programs</button>
+</div>
+
+<div class="editor-toolbar">
+<button class="btn" id="createPageBtn"><i class="fas fa-plus"></i> Create New</button>
+</div>
+
+<div id="pagesTab" class="editor-tab-content active">
+<div class="empty-state" id="pagesEmpty"><i class="fas fa-file"></i><p>No custom pages yet. Create your first page!</p></div>
+<div id="pagesList" style="display:none;"></div>
+</div>
+
+<div id="programsTab" class="editor-tab-content">
+<div class="empty-state" id="programsEmpty"><i class="fas fa-folder"></i><p>No programs yet.</p></div>
+<div id="programsList" style="display:none;"></div>
+</div>
+
+<!-- Page Editor Modal -->
+<div class="modal-overlay" id="pageModal" style="display:none;">
+<div class="modal-box">
+<div class="modal-header"><h3 id="modalTitle">Edit Page</h3><button class="modal-close" id="modalClose">&times;</button></div>
+<div class="modal-body">
+<input type="hidden" id="editId">
+<div class="form-row">
+<div class="form-group"><label>Page Name</label><input type="text" id="editName" placeholder="About Us"></div>
+<div class="form-group"><label>Slug</label><input type="text" id="editSlug" placeholder="about-us"></div>
+</div>
+<div class="form-row checkbox-row">
+<label class="checkbox-label"><input type="checkbox" id="editInHeader" checked> <span>Show in header navigation</span></label>
+<label class="checkbox-label"><input type="checkbox" id="editInFooter" checked> <span>Show in footer</span></label>
+</div>
+<hr>
+<h4 style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--text-light);margin-bottom:12px;">Sections</h4>
+<div id="sectionsList"></div>
+<button class="btn btn-outline" id="addSectionBtn"><i class="fas fa-plus"></i> Add Section</button>
+</div>
+<div class="modal-footer">
+<button class="btn" id="savePageBtn"><i class="fas fa-save"></i> Save Page</button>
+<button class="btn btn-outline" id="cancelModalBtn">Cancel</button>
+</div>
+</div>
+</div>
+
+<style>
+.editor-tabs{display:flex;gap:0;margin-bottom:20px;border-bottom:2px solid var(--border)}
+.editor-tabs .etab{padding:10px 24px;border:none;background:none;font-family:var(--font);font-size:13px;font-weight:700;cursor:pointer;color:var(--text-light);transition:var(--transition);text-transform:uppercase;letter-spacing:1px;border-bottom:2px solid transparent;margin-bottom:-2px}
+.editor-tabs .etab.active{color:var(--primary);border-bottom-color:var(--accent)}
+.editor-tabs .etab:hover{color:var(--primary)}
+.editor-toolbar{margin-bottom:20px}
+.editor-tab-content{display:none}
+.editor-tab-content.active{display:block}
+
+.page-card{border:1px solid var(--border);background:var(--white);margin-bottom:8px}
+.page-card .pc-header{display:flex;align-items:center;gap:12px;padding:14px 20px;cursor:pointer;transition:var(--transition)}
+.page-card .pc-header:hover{background:var(--light-bg)}
+.page-card .pc-header h3{font-size:14px;font-weight:800;color:var(--primary);flex:1;margin:0}
+.page-card .pc-header .pc-badge{font-size:10px;padding:2px 8px;background:var(--light-bg);color:var(--text-light);font-weight:700;text-transform:uppercase}
+.page-card .pc-header .pc-actions{display:flex;gap:4px}
+.page-card .pc-header .pc-actions button{width:30px;height:30px;border:none;background:transparent;cursor:pointer;color:var(--text-light);transition:var(--transition);display:flex;align-items:center;justify-content:center;font-size:13px}
+.page-card .pc-header .pc-actions .pc-edit:hover{color:var(--accent);background:rgba(201,151,91,.1)}
+.page-card .pc-header .pc-actions .pc-delete:hover{color:#ef4444;background:#fee2e2}
+
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;display:flex;align-items:flex-start;justify-content:center;padding:40px 20px;overflow-y:auto}
+.modal-box{background:var(--white);width:100%;max-width:700px;box-shadow:0 12px 48px rgba(0,0,0,.12);margin-top:20px}
+.modal-header{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--border)}
+.modal-header h3{font-size:18px;font-weight:900;color:var(--primary);margin:0}
+.modal-close{width:32px;height:32px;border:none;background:var(--light-bg);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--transition)}
+.modal-close:hover{background:var(--accent);color:var(--white)}
+.modal-body{padding:24px}
+.modal-body .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.modal-body .form-row.checkbox-row{grid-template-columns:1fr 1fr;gap:16px}
+.modal-body .form-group{margin-bottom:0}
+.modal-body label{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-light);margin-bottom:4px}
+.modal-body input[type="text"]{width:100%;padding:10px 14px;border:1px solid var(--border);font-family:var(--font);font-size:14px;outline:none;transition:var(--transition);color:var(--text)}
+.modal-body input[type="text"]:focus{border-color:var(--accent)}
+.modal-body .checkbox-label{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text);cursor:pointer;text-transform:none;letter-spacing:0;font-weight:400}
+.modal-body .checkbox-label input[type="checkbox"]{width:auto;accent-color:var(--accent);margin:0}
+.modal-body hr{border:none;border-top:1px solid var(--border);margin:20px 0}
+.section-item{border:1px solid var(--border);margin-bottom:8px}
+.section-item .si-header{display:flex;align-items:center;padding:10px 14px;background:var(--light-bg);gap:8px}
+.section-item .si-header input{flex:1;border:none;background:transparent;font-family:var(--font);font-size:13px;font-weight:700;color:var(--primary);outline:none;padding:4px 0}
+.section-item .si-header .remove-section{width:28px;height:28px;border:none;background:transparent;color:#ef4444;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.section-item .si-header .remove-section:hover{background:#fee2e2}
+.section-item textarea{width:100%;border:none;border-top:1px solid var(--border);padding:14px;font-family:var(--font);font-size:13px;line-height:1.7;color:var(--text-light);outline:none;resize:vertical;min-height:100px;background:var(--white)}
+.modal-footer{display:flex;gap:8px;padding:16px 24px;border-top:1px solid var(--border);justify-content:flex-end}
+</style>
+
+<script>
+(function(){
+var base=window.BASE_PATH||'/sbg/';
+var apiUrl=base+'admin/api/data.php';
+var editMode=false;var editType='pages';var editIndex=-1;
+
+function loadPages(){
+fetch(apiUrl+'?type=pages')
+.then(function(r){return r.json()})
+.then(function(res){
+if(!res.success||!res.data){renderList('pages',[]);renderList('programs',[]);return}
+var d=res.data;
+renderList('pages',d.pages||[]);
+renderList('programs',d.programs||[]);
+})
+.catch(function(){});
+}
+
+function renderList(type,items){
+var list=document.getElementById(type+'List');
+var empty=document.getElementById(type+'Empty');
+if(!items.length){list.style.display='none';empty.style.display='block';return}
+list.style.display='block';empty.style.display='none';list.innerHTML='';
+items.forEach(function(item,i){
+var card=document.createElement('div');card.className='page-card';
+var sections=(item.sections||[]).length;
+card.innerHTML='<div class="pc-header"><h3>'+item.name+'</h3><span class="pc-badge">'+sections+' sections</span><div class="pc-actions"><button class="pc-edit" data-type="'+type+'" data-index="'+i+'" title="Edit"><i class="fas fa-pen"></i></button><button class="pc-delete" data-type="'+type+'" data-index="'+i+'" title="Delete"><i class="fas fa-trash"></i></button></div></div>';
+list.appendChild(card);
+});
+list.querySelectorAll('.pc-edit').forEach(function(btn){
+btn.addEventListener('click',function(){openEditor(btn.getAttribute('data-type'),parseInt(btn.getAttribute('data-index')));});
+});
+list.querySelectorAll('.pc-delete').forEach(function(btn){
+btn.addEventListener('click',function(){deleteItem(btn.getAttribute('data-type'),parseInt(btn.getAttribute('data-index')));});
+});
+}
+
+function deleteItem(type,idx){
+if(!confirm('Delete this '+(type==='pages'?'page':'program')+'?'))return;
+fetch(apiUrl+'?type=pages')
+.then(function(r){return r.json()})
+.then(function(res){
+if(!res.success||!res.data)return;
+var d=res.data;(d[type]||[]).splice(idx,1);
+return fetch(apiUrl,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type:'pages',data:d})});
+})
+.then(function(r){if(r)return r.json()})
+.then(function(res2){
+if(res2&&res2.success)loadPages();
+})
+.catch(function(){});
+}
+
+function openEditor(type,idx){
+editMode=true;editType=type;editIndex=idx;
+document.getElementById('modalTitle').textContent='Edit '+(type==='pages'?'Page':'Program');
+document.getElementById('pageModal').style.display='flex';
+fetch(apiUrl+'?type=pages')
+.then(function(r){return r.json()})
+.then(function(res){
+if(!res.success||!res.data)return;
+var items=res.data[type]||[];
+var item=items[idx]||{name:'',slug:'',sections:[],inHeader:true,inFooter:true};
+document.getElementById('editId').value=idx;
+document.getElementById('editName').value=item.name||'';
+document.getElementById('editSlug').value=item.slug||'';
+document.getElementById('editInHeader').checked=item.inHeader!==false;
+document.getElementById('editInFooter').checked=item.inFooter!==false;
+renderSections(item.sections||[]);
+})
+.catch(function(){});
+}
+
+function openNew(type){
+editMode=false;editType=type;editIndex=-1;
+document.getElementById('modalTitle').textContent='New '+(type==='pages'?'Page':'Program');
+document.getElementById('pageModal').style.display='flex';
+document.getElementById('editId').value='';
+document.getElementById('editName').value='';
+document.getElementById('editSlug').value='';
+document.getElementById('editInHeader').checked=true;
+document.getElementById('editInFooter').checked=true;
+renderSections([]);
+}
+
+function renderSections(sections){
+var list=document.getElementById('sectionsList');list.innerHTML='';
+sections.forEach(function(s,i){
+addSectionRow(s.name||'',s.content||'');
+});
+if(!sections.length)addSectionRow('','');
+}
+
+function addSectionRow(name,content){
+var list=document.getElementById('sectionsList');
+var div=document.createElement('div');div.className='section-item';
+div.innerHTML='<div class="si-header"><input type="text" class="sec-name" value="'+name.replace(/"/g,'&quot;')+'" placeholder="Section Name"><button class="remove-section"><i class="fas fa-times"></i></button></div><textarea class="sec-content" placeholder="Section content (HTML allowed)">'+content.replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</textarea>';
+list.appendChild(div);
+div.querySelector('.remove-section').addEventListener('click',function(){div.remove();});
+}
+
+document.getElementById('addSectionBtn').addEventListener('click',function(){addSectionRow('','');});
+
+document.getElementById('createPageBtn').addEventListener('click',function(){
+var activeTab=document.querySelector('.etab.active');
+var type=activeTab?activeTab.getAttribute('data-tab'):'pages';
+openNew(type);
+});
+
+document.getElementById('modalClose').addEventListener('click',function(){document.getElementById('pageModal').style.display='none';});
+document.getElementById('cancelModalBtn').addEventListener('click',function(){document.getElementById('pageModal').style.display='none';});
+document.getElementById('pageModal').addEventListener('click',function(e){if(e.target===this)this.style.display='none';});
+
+document.getElementById('savePageBtn').addEventListener('click',function(){
+var name=document.getElementById('editName').value;if(!name){alert('Page name is required.');return}
+var slug=document.getElementById('editSlug').value||name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+var type=editType;
+var sections=[];
+document.querySelectorAll('.section-item').forEach(function(el){
+var sn=el.querySelector('.sec-name');var sc=el.querySelector('.sec-content');
+if(sn&&sn.value.trim())sections.push({name:sn.value,content:sc?sc.value:''});
+});
+var item={id:slug,name:name,slug:slug,sections:sections,inHeader:document.getElementById('editInHeader').checked,inFooter:document.getElementById('editInFooter').checked};
+
+fetch(apiUrl+'?type=pages')
+.then(function(r){return r.json()})
+.then(function(res){
+var d=res.success&&res.data?res.data:{pages:[],programs:[]};
+if(!d[type])d[type]=[];
+if(editMode&&editIndex>=0)d[type][editIndex]=item;
+else d[type].push(item);
+return fetch(apiUrl,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type:'pages',data:d})});
+})
+.then(function(r){return r.json()})
+.then(function(res2){
+if(res2.success){
+document.getElementById('pageModal').style.display='none';
+loadPages();
+}else{alert('Error saving.');}
+})
+.catch(function(){alert('Error saving.');});
+});
+
+// Tab switching
+document.querySelectorAll('.etab').forEach(function(tab){
+tab.addEventListener('click',function(){
+document.querySelectorAll('.etab').forEach(function(t){t.classList.remove('active');});
+tab.classList.add('active');
+var tabName=tab.getAttribute('data-tab');
+document.querySelectorAll('.editor-tab-content').forEach(function(tc){tc.classList.remove('active');});
+document.getElementById(tabName+'Tab').classList.add('active');
+});
+});
+
+loadPages();
+})();
+</script>

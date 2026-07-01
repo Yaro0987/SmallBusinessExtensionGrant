@@ -1,0 +1,16 @@
+[
+    {
+        "type": "reminder",
+        "subject": "Follow-up Reminder - SBG-APP-2026-29346",
+        "to": "admin@sbgrant.com",
+        "appId": "SBG-APP-2026-29346",
+        "sent_at": "2026-07-01 20:17:35"
+    },
+    {
+        "type": "admin_login",
+        "subject": "Admin Login Notification - SBG",
+        "to": "admin@sbgrant.com",
+        "appId": "sbg-483AC97DB6",
+        "sent_at": "2026-07-01 20:17:52"
+    }
+]

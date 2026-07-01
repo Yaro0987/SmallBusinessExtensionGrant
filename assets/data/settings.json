@@ -1,0 +1,31 @@
+{
+    "general": {
+        "site_name": "Small Business Expansion Grant",
+        "tagline": "Free Grant Funding When You Need It Most",
+        "app_prefix": "sbg"
+    },
+    "email": {
+        "admin_email": "admin@sbgrant.com"
+    },
+    "appearance": {
+        "logo_url": "assets/img/logo.jpg",
+        "primary_color": "#0b1d3a",
+        "accent_color": "#c9975b"
+    },
+    "support": {
+        "email": "support@sbgrant.com",
+        "phone": "1-800-555-1234",
+        "hours": "Mon-Fri 9AM-6PM EST"
+    },
+    "contact": {
+        "address": "123 Grant Ave, New York, NY 10001",
+        "phone": "1-800-555-1234",
+        "email": "info@sbgrant.com",
+        "social": [
+            { "platform": "Facebook", "url": "#", "icon": "facebook-f" },
+            { "platform": "Twitter", "url": "#", "icon": "twitter" },
+            { "platform": "Instagram", "url": "#", "icon": "instagram" },
+            { "platform": "LinkedIn", "url": "#", "icon": "linkedin-in" }
+        ]
+    }
+}

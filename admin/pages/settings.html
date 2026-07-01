@@ -1,0 +1,102 @@
+<div class="settings-grid">
+<div class="setting-card" data-setting-card="general">
+<div class="sc-icon"><i class="fas fa-globe"></i></div>
+<h3>General</h3>
+<p>Site name, tagline</p>
+<i class="fas fa-arrow-right sc-arrow"></i>
+</div>
+<div class="setting-card" data-setting-card="email">
+<div class="sc-icon"><i class="fas fa-envelope"></i></div>
+<h3>Email</h3>
+<p>Admin email</p>
+<i class="fas fa-arrow-right sc-arrow"></i>
+</div>
+<div class="setting-card" data-setting-card="appearance">
+<div class="sc-icon"><i class="fas fa-palette"></i></div>
+<h3>Appearance</h3>
+<p>Logo, colors</p>
+<i class="fas fa-arrow-right sc-arrow"></i>
+</div>
+<div class="setting-card" data-setting-card="support">
+<div class="sc-icon"><i class="fas fa-headset"></i></div>
+<h3>Support</h3>
+<p>Support email, phone, hours</p>
+<i class="fas fa-arrow-right sc-arrow"></i>
+</div>
+<div class="setting-card" data-setting-card="contact">
+<div class="sc-icon"><i class="fas fa-address-card"></i></div>
+<h3>Contact</h3>
+<p>Address, phone, email, social links</p>
+<i class="fas fa-arrow-right sc-arrow"></i>
+</div>
+</div>
+
+<div class="settings-form-wrap" style="display:none;">
+<button class="btn btn-outline" id="settingsBackBtn" style="margin-bottom:20px;"><i class="fas fa-arrow-left"></i> Back to Settings</button>
+
+<form class="settings-form" id="settingsFormGeneral" style="display:none;">
+<h3>General Settings</h3>
+<div class="form-group"><label>Site Name</label><input type="text" id="sSiteName" placeholder="Small Business Expansion Grant"></div>
+<div class="form-group"><label>Tagline</label><input type="text" id="sTagline" placeholder="Free Grant Funding When You Need It Most"></div>
+<div class="form-group"><label>Application ID Prefix</label><input type="text" id="sAppPrefix" placeholder="sbg"></div>
+<p style="font-size:12px;color:var(--text-light);margin-bottom:16px;">Application IDs are formatted as: <strong>prefix-10randomchars</strong> (e.g. sbg-A1B2C3D4E5). Change the prefix here.</p>
+<button type="button" class="btn settings-save-btn" data-section="general"><i class="fas fa-save"></i> Save</button>
+</form>
+
+<form class="settings-form" id="settingsFormEmail" style="display:none;">
+<h3>Email Settings</h3>
+<div class="form-group"><label>Admin Email</label><input type="email" id="sAdminEmail" placeholder="admin@sbgrant.com"></div>
+<button type="button" class="btn settings-save-btn" data-section="email"><i class="fas fa-save"></i> Save</button>
+</form>
+
+<form class="settings-form" id="settingsFormAppearance" style="display:none;">
+<h3>Appearance</h3>
+<div class="form-group"><label>Logo URL</label><input type="text" id="sLogoUrl" placeholder="assets/img/logo.jpg"></div>
+<div class="form-group"><label>Primary Color</label><input type="text" id="sPrimaryColor" placeholder="#0b1d3a"></div>
+<div class="form-group"><label>Accent Color</label><input type="text" id="sAccentColor" placeholder="#c9975b"></div>
+<button type="button" class="btn settings-save-btn" data-section="appearance"><i class="fas fa-save"></i> Save</button>
+</form>
+
+<form class="settings-form" id="settingsFormSupport" style="display:none;">
+<h3>Support</h3>
+<div class="form-group"><label>Support Email</label><input type="email" id="sSupportEmail" placeholder="support@sbgrant.com"></div>
+<div class="form-group"><label>Support Phone</label><input type="text" id="sSupportPhone" placeholder="1-800-555-1234"></div>
+<div class="form-group"><label>Support Hours</label><input type="text" id="sSupportHours" placeholder="Mon-Fri 9AM-6PM EST"></div>
+<button type="button" class="btn settings-save-btn" data-section="support"><i class="fas fa-save"></i> Save</button>
+</form>
+
+<form class="settings-form" id="settingsFormContact" style="display:none;">
+<h3>Contact Information</h3>
+<div class="form-group"><label>Address</label><input type="text" id="sAddress" placeholder="123 Grant Ave, New York, NY 10001"></div>
+<div class="form-group"><label>Contact Phone</label><input type="text" id="sContactPhone" placeholder="1-800-555-1234"></div>
+<div class="form-group"><label>Contact Email</label><input type="email" id="sContactEmail" placeholder="info@sbgrant.com"></div>
+<h4 style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--text-light);margin:20px 0 12px;">Social Links</h4>
+<div id="socialLinksList"></div>
+<button type="button" class="btn btn-outline" id="addSocialBtn" style="margin-bottom:16px;"><i class="fas fa-plus"></i> Add Social Link</button><br>
+<button type="button" class="btn settings-save-btn" data-section="contact"><i class="fas fa-save"></i> Save</button>
+</form>
+
+<span id="settingsSaveMsg" style="font-size:13px;display:none;"></span>
+</div>
+
+<style>
+.settings-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;max-width:800px}
+.setting-card{background:var(--white);border:1px solid var(--border);padding:28px 24px;cursor:pointer;transition:all .25s;position:relative}
+.setting-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.setting-card .sc-icon{width:44px;height:44px;background:rgba(201,151,91,.1);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:20px;margin-bottom:16px}
+.setting-card h3{font-size:16px;font-weight:800;color:var(--primary);margin-bottom:4px}
+.setting-card p{font-size:13px;color:var(--text-light);margin:0}
+.setting-card .sc-arrow{position:absolute;top:28px;right:24px;color:var(--border);font-size:14px;transition:all .25s}
+.setting-card:hover .sc-arrow{color:var(--accent);transform:translateX(4px)}
+.settings-form-wrap{max-width:600px}
+.settings-form-wrap h3{font-size:20px;font-weight:900;color:var(--primary);margin-bottom:20px}
+.settings-form .form-group{margin-bottom:16px}
+.settings-form label{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-light);margin-bottom:4px}
+.settings-form input{width:100%;padding:10px 14px;border:1px solid var(--border);font-family:var(--font);font-size:14px;outline:none;transition:var(--transition);color:var(--text)}
+.settings-form input:focus{border-color:var(--accent)}
+.social-link-row{display:flex;gap:8px;margin-bottom:8px;align-items:center}
+.social-link-row input{flex:1}
+.social-link-row .remove-social{width:32px;height:32px;border:none;background:#fee2e2;color:#ef4444;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px}
+.social-link-row .remove-social:hover{background:#ef4444;color:#fff}
+@media(max-width:640px){.settings-grid{grid-template-columns:1fr}.social-link-row{flex-wrap:wrap}.social-link-row input{flex:1 1 100%}.settings-form-wrap{max-width:100%}}
+</style>

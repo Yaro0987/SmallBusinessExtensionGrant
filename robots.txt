@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Sitemap: https://localhost/sbg/sitemap.xml
+
+# Disallow admin panel
+Disallow: /admin/
+
+# Disallow submission files
+Disallow: /assets/uploads/

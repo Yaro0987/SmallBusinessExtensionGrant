@@ -1,0 +1,176 @@
+{
+  "botName": "Grant Assistant",
+  "greeting": "Hi! I'm your Grant Assistant. I can help you with applications, answer questions about grants, or guide you through the site. How can I help?",
+  "fallback": "I'm not sure I have the answer to that. Would you like to:\n- Speak with a human agent\n- Go back to the home page\n- Start a grant application",
+  "liveAgent": "A human agent will be with you shortly. Meanwhile, you can continue browsing or start your application.",
+  "items": [
+    {
+      "id": "greeting_hi",
+      "keywords": ["hi", "hello", "hey", "good morning", "good afternoon", "good evening", "howdy"],
+      "q": "Greetings",
+      "a": "Hello! Welcome to the Small Business Expansion Grant. I'm your Grant Assistant. How can I help you today? You can ask me about:\n\n• Available grant programs\n• The application process\n• Eligibility requirements\n• How to navigate the site\n• Getting help with your application"
+    },
+    {
+      "id": "what_grants",
+      "keywords": ["what grants", "available grants", "grant programs", "types of grants", "grant categories", "what funding", "what programs"],
+      "q": "What grants are available?",
+      "a": "We offer several grant programs:\n\n1. **Startup Grant** — For new businesses launching or in their first year\n2. **Small Business Grant** — For established businesses looking to expand\n3. **Innovation Grant** — For research, development, and innovative projects\n4. **Community Grant** — For community-focused initiatives and non-profits\n5. **Research Grant** — For academic and industry research projects\n\nEach has different funding amounts. You can apply from our Apply page by clicking 'Apply Now'."
+    },
+    {
+      "id": "how_apply",
+      "keywords": ["how to apply", "how do i apply", "application process", "apply for grant", "submit application", "how apply"],
+      "q": "How do I apply?",
+      "a": "Applying is easy! Here's how:\n\n1. Go to the **Apply** page (click 'Apply Now' in the nav)\n2. Fill in your details: full name, business name, grant type, DOB, email, phone\n3. Select your desired grant amount\n4. Write your business plan/description\n5. Upload supporting documents (optional)\n6. Submit and we'll review within **24 hours**\n\nNeed help filling out the form? I can guide you through each step!"
+    },
+    {
+      "id": "eligibility",
+      "keywords": ["eligibility", "who can apply", "am i eligible", "qualify", "requirements", "who qualifies", "eligible"],
+      "q": "Who is eligible?",
+      "a": "Our grants are open to:\n\n• Small business owners (operating 6+ months)\n• Startup founders with a solid business plan\n• Freelancers and solopreneurs\n• Non-profit organizations\n• E-commerce businesses\n• Minority-owned, women-owned, and veteran-owned businesses\n\nYou must be at least 18 years old. Most industries and stages are welcome!"
+    },
+    {
+      "id": "repayment",
+      "keywords": ["repay", "repayment", "pay back", "interest", "loan", "free money", "no repayment", "no pay back"],
+      "q": "Do I have to repay the grant?",
+      "a": "No! Our grants are **non-repayable**. This is free funding for your business. There is:\n\n• No interest\n• No repayment schedule\n• No hidden fees\n• No equity required\n\nUnlike loans, once you're awarded a grant, the money is yours to use for your business."
+    },
+    {
+      "id": "review_time",
+      "keywords": ["how long", "review time", "processing time", "how long does it take", "when will i know", "decision time", "24 hours", "24hr"],
+      "q": "How long does the review take?",
+      "a": "We review applications within **24 hours**. The process is:\n\n1. Submit your application (takes 5-10 minutes)\n2. Our team reviews it within 24 hours\n3. If approved, funds are disbursed shortly after\n\nWe pride ourselves on being fast and transparent!"
+    },
+    {
+      "id": "how_receive",
+      "keywords": ["receive funds", "get money", "how paid", "disbursed", "bank account", "wire transfer", "direct deposit", "get funded"],
+      "q": "How will I receive the funds?",
+      "a": "Approved grant funds are disbursed directly to your bank account via **wire transfer** or **direct deposit**. The process is:\n\n• Fast — typically within 2-3 business days of approval\n• Secure — encrypted transfer\n• Convenient — straight to your account\n\nYou'll receive a confirmation with all the details."
+    },
+    {
+      "id": "fees",
+      "keywords": ["fee", "fees", "hidden fees", "application fee", "processing fee", "cost", "charges", "any fee"],
+      "q": "Are there any fees?",
+      "a": "No. Our grants are **completely free**. There are:\n\n• No application fees\n• No processing fees\n• No hidden charges\n• No membership costs\n\nIf approved, you receive **100% of the grant amount**. We believe in transparent, accessible funding."
+    },
+    {
+      "id": "home_page",
+      "keywords": ["home page", "go home", "back to home", "homepage", "main page"],
+      "q": "About the Home page",
+      "a": "The **Home** page gives you an overview of our grant programs. You'll find:\n\n• Featured grant stats and highlights\n• Why choose our grants\n• Available grant categories\n• How it works (simple 3-step process)\n• About us section\n• Eligibility information\n• Frequently asked questions\n\nUse the navigation menu to explore other pages!"
+    },
+    {
+      "id": "apply_page",
+      "keywords": ["apply page", "application form", "apply form", "where do i apply", "fill application"],
+      "q": "About the Apply page",
+      "a": "The **Apply** page is where you submit your grant application. You'll need to provide:\n\n• Full name and business name\n• Grant type (select the program you want)\n• Date of birth and contact info\n• Grant amount requested\n• Years of business experience\n• Your business plan or description\n• Supporting documents (optional — images, voice notes, PDFs)\n\nI can help you fill out the form step by step if you'd like assistance!"
+    },
+    {
+      "id": "how_it_works_page",
+      "keywords": ["how it works", "process", "how it work", "steps", "how does it work"],
+      "q": "How the grant process works",
+      "a": "Our grant process is simple:\n\n**Step 1:** Complete your application — it takes just minutes\n**Step 2:** Our team reviews within 24 hours\n**Step 3:** Receive your funds if approved\n\nThat's it! No complicated paperwork, no waiting weeks for a decision."
+    },
+    {
+      "id": "faq_page",
+      "keywords": ["faq", "frequently asked", "common questions", "questions", "answers"],
+      "q": "About the FAQ page",
+      "a": "The **FAQ** page has answers to the most common questions about our grants, including:\n\n• What types of grants are available\n• Repayment terms (spoiler: none!)\n• Processing times\n• Eligibility requirements\n• How funds are delivered\n• Whether there are any fees\n\nIf you don't find your answer there, feel free to ask me!"
+    },
+    {
+      "id": "contact_page",
+      "keywords": ["contact", "contact page", "reach you", "call", "email", "phone", "customer support", "support"],
+      "q": "How to contact us",
+      "a": "You can reach us through:\n\n• **Email:** info@sbgrant.com\n• **Phone:** 1-800-555-1234\n• **Contact page:** Available in the navigation menu\n\nOur support team is available during business hours. You can also use this chat to get instant help from me!"
+    },
+    {
+      "id": "documents_needed",
+      "keywords": ["documents", "documentation", "what documents", "required documents", "supporting documents", "paperwork", "need to apply"],
+      "q": "What documents do I need?",
+      "a": "For your application, you'll need:\n\n**Required:**\n• Basic business information\n• Business plan or description\n\n**Optional but helpful:**\n• Business license or registration\n• Financial statements\n• Tax returns\n• Business photos\n• Voice note explaining your business\n• Any other supporting documents\n\nYou can upload images, audio files (voice notes), PDFs, and DOC files directly in the application form."
+    },
+    {
+      "id": "grant_amounts",
+      "keywords": ["how much", "grant amount", "funding amount", "how much money", "maximum grant", "minimum grant", "amount"],
+      "q": "How much funding can I get?",
+      "a": "Grant amounts vary by program:\n\n• **Startup Grants:** Up to $15,000\n• **Small Business Grants:** Up to $50,000\n• **Innovation Grants:** Up to $100,000\n• **Community Grants:** Up to $25,000\n• **Research Grants:** Up to $100,000\n\nThe average grant awarded is **$15,000+**. You can request the amount that fits your needs in the application."
+    },
+    {
+      "id": "application_help",
+      "keywords": ["help apply", "help with application", "guide me", "assist", "help me apply", "walk me through", "step by step"],
+      "q": "Help with my application",
+      "a": "I'd be happy to help you with your application! Let me ask you a few questions to get started:\n\n1. What is your **full name**?\n2. What is your **business name**?\n3. Which **grant type** are you interested in?\n4. What is your **email address**?\n\nJust answer each question and I'll help compile your information!"
+    },
+    {
+      "id": "application_help_collect",
+      "keywords": [],
+      "q": "Application assistant (collecting info)",
+      "a": "Great, let me collect your information step by step:\n\n**Step 1:** What is your full name?\n**Step 2:** What is your business name?\n**Step 3:** Which grant type interests you? (Startup, Small Business, Innovation, Community, Research)\n**Step 4:** What's your email address?\n**Step 5:** What's your phone number?\n**Step 6:** How many years of business experience do you have?\n**Step 7:** Tell me about your business and how you plan to use the grant funds.\n\nReply with your answers and I'll compile everything for you!"
+    },
+    {
+      "id": "verify_info",
+      "keywords": ["verify", "check", "review", "confirm", "is this correct", "look over"],
+      "q": "Verify application information",
+      "a": "I can help you review your application before submission. Please share what you've entered and I'll check that everything looks complete and accurate. I'll make sure:\n\n• All required fields are filled\n• Email and phone numbers look valid\n• Your business plan is clear\n• Grant type matches your needs\n\nThen I'll guide you on submitting!"
+    },
+    {
+      "id": "upload_help",
+      "keywords": ["upload", "file", "document", "attach", "upload file", "how to upload", "image", "voice note", "audio"],
+      "q": "How to upload files",
+      "a": "You can upload files in two ways:\n\n**In the application form:**\n• Drag & drop files into the upload area\n• Click 'browse' to select files\n• Supports: images (JPG, PNG, GIF, WEBP), audio (MP3, WAV, OGG), PDF, DOC\n• Max 10MB per file\n\n**In this chat:**\n• Click the attachment button to upload images or voice notes\n• I can review them and provide feedback\n\nUploading supporting documents strengthens your application!"
+    },
+    {
+      "id": "after_submit",
+      "keywords": ["after submit", "what happens next", "next steps", "after applying", "submitted", "what now"],
+      "q": "What happens after I submit?",
+      "a": "After you submit your application, here's what happens:\n\n1. **Confirmation** — You'll receive an email confirming we got your application\n2. **Review** — Our team reviews your application within 24 hours\n3. **Decision** — You'll be notified of the outcome via email\n4. **Funding** — If approved, funds are sent to your bank account\n\nYou can track your application status by contacting us. Feel free to ask me anytime!"
+    },
+    {
+      "id": "multiple_applications",
+      "keywords": ["multiple applications", "apply more than once", "second application", "apply again", "multiple grants"],
+      "q": "Can I apply for multiple grants?",
+      "a": "Yes! You can apply for different grant programs. However:\n\n• Each application is reviewed independently\n• You may receive funding from one or more programs\n• Make sure each application is tailored to that specific grant type\n\nWe encourage you to apply for the program that best fits your needs!"
+    },
+    {
+      "id": "approval_chances",
+      "keywords": ["approval", "chances", "get approved", "likelihood", "approval rate", "success rate", "how likely"],
+      "q": "What are my chances of approval?",
+      "a": "We have a strong approval rate! Key factors that help:\n\n• Clear business plan and goals\n• Complete and accurate information\n• Relevant experience in your field\n• Strong reasoning for how you'll use the funds\n• Supporting documents\n\nEvery application is reviewed fairly. The best way to improve your chances is to provide thorough, honest information!"
+    },
+    {
+      "id": "site_navigation",
+      "keywords": ["navigate", "menu", "navigation", "how to use", "site map", "pages", "where to find"],
+      "q": "How to navigate the site",
+      "a": "This site has the following pages:\n\n• **Home** (`#home`) — Overview of grant programs\n• **Apply** (`#apply`) — Submit your application\n\nYou can navigate using:\n• The **top navigation bar** (desktop)\n• The **menu button** (mobile, slides from left)\n• The **Apply Now** button on every page\n\nWhat page are you looking for?"
+    },
+    {
+      "id": "tech_support",
+      "keywords": ["not working", "error", "bug", "issue", "problem", "technical", "broken", "website issue"],
+      "q": "Technical issues",
+      "a": "If you're experiencing technical issues:\n\n1. Try refreshing the page\n2. Clear your browser cache\n3. Try a different browser (Chrome, Firefox, or Edge)\n4. Check your internet connection\n\nIf the issue persists, please contact our support team at info@sbgrant.com or call 1-800-555-1234."
+    },
+    {
+      "id": "privacy",
+      "keywords": ["privacy", "data", "secure", "safety", "information safe", "confidential", "protected"],
+      "q": "Is my information secure?",
+      "a": "Absolutely! We take your privacy seriously:\n\n• All data is encrypted using industry-standard protocols\n• Your information is never shared with third parties\n• We comply with data protection regulations\n• You can request deletion of your data anytime\n\nSee our Privacy Policy page for full details."
+    },
+    {
+      "id": "application_tips",
+      "keywords": ["tips", "advice", "suggestions", "recommendations", "best application", "strong application", "improve application"],
+      "q": "Tips for a strong application",
+      "a": "Here are my top tips for a strong application:\n\n1. **Be specific** — Clearly describe your business and how you'll use the funds\n2. **Show impact** — Explain how the grant will help you grow, hire, or innovate\n3. **Provide details** — The more information, the better\n4. **Upload documents** — Supporting files strengthen your case\n5. **Be honest** — Accurate information builds trust\n6. **Proofread** — Check for errors before submitting\n\nNeed help with any of these? Just ask!"
+    }
+  ],
+  "applicationFlow": [
+    { "step": 1, "field": "fullname", "question": "What is your full name?" },
+    { "step": 2, "field": "business_name", "question": "What is your business name?" },
+    { "step": 3, "field": "grant_type", "question": "Which grant type interests you? (Startup, Small Business, Innovation, Community, or Research)" },
+    { "step": 4, "field": "dob", "question": "What is your date of birth? (DD/MM/YYYY)" },
+    { "step": 5, "field": "email", "question": "What is your email address?" },
+    { "step": 6, "field": "cell", "question": "What is your cell phone number?" },
+    { "step": 7, "field": "grant_amount", "question": "How much grant funding are you requesting?" },
+    { "step": 8, "field": "experience", "question": "How many years of business experience do you have?" },
+    { "step": 9, "field": "business_plan", "question": "Tell me about your business and how you plan to use the grant funds." },
+    { "step": 10, "field": "review", "question": "Would you like me to review your information before you submit?" }
+  ]
+}

@@ -1,0 +1,18 @@
+<div class="table-wrap">
+<div class="tbl-header"><h3>Contact Form Submissions</h3></div>
+<div class="empty-state" id="msgEmpty"><i class="fas fa-inbox"></i><p>No messages yet.</p></div>
+<div style="display:none;" id="msgTable"><table><thead><tr><th>Name</th><th>Email</th><th>Subject</th><th>Date</th><th>Actions</th></tr></thead><tbody id="msgBody"></tbody></table></div>
+</div>
+
+<style>
+.message-row{cursor:pointer}
+.message-row:hover td{background:var(--light-bg)}
+.message-row .msg-preview{font-size:12px;color:var(--text-light);max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.message-row.unread td:first-child{font-weight:800;color:var(--primary)}
+.message-detail{display:none}
+.message-detail.show{display:table-row}
+.message-detail td{padding:20px!important;background:var(--light-bg)}
+.message-detail .md-body{font-size:14px;line-height:1.8;color:var(--text);white-space:pre-wrap;margin-bottom:12px}
+.message-detail .md-info{font-size:12px;color:var(--text-light)}
+.btn-sm{padding:6px 14px;font-size:11px}
+</style>

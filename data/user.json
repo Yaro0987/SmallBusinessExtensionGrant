@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "appId": "SBG-APP-2026-29344",
+    "fullname": "John Doe",
+    "email": "john.doe@example.com",
+    "phone": "+1 (555) 123-4567",
+    "business": "Doe Enterprises LLC",
+    "grant_type": "startup",
+    "amount_requested": 15000,
+    "status": "pending",
+    "applied_date": "2026-06-15",
+    "notes": "First-time applicant, referred by partner program"
+  },
+  {
+    "id": 2,
+    "appId": "SBG-APP-2026-29345",
+    "fullname": "Jane Smith",
+    "email": "jane.smith@example.com",
+    "phone": "+1 (555) 987-6543",
+    "business": "Smith Innovations Inc.",
+    "grant_type": "innovation",
+    "amount_requested": 50000,
+    "status": "approved",
+    "applied_date": "2026-05-20",
+    "notes": "Returning applicant, previously funded in 2025"
+  },
+  {
+    "id": 3,
+    "appId": "SBG-APP-2026-29346",
+    "fullname": "Robert Johnson",
+    "email": "robert.j@example.com",
+    "phone": "+1 (555) 456-7890",
+    "business": "Main Street Bakery",
+    "grant_type": "small-business",
+    "amount_requested": 10000,
+    "status": "review",
+    "applied_date": "2026-06-28",
+    "notes": "Woman-owned business, priority processing"
+  }
+]

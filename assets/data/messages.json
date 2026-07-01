@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Sarah Williams",
+    "email": "sarah.w@example.com",
+    "subject": "Application deadline extension",
+    "message": "Hi, I was wondering if it's possible to get an extension on the grant application deadline? I have all my documents ready but my business financial statements won't be ready until next week. Please let me know if this can be arranged. Thank you!",
+    "date": "2026-06-28",
+    "read": false
+  },
+  {
+    "name": "Michael Chen",
+    "email": "michael.chen@techsolutions.com",
+    "subject": "Eligibility question for innovation grant",
+    "message": "Good day, I'm the founder of a small tech startup and I'm interested in the Innovation Grant program. My business has been operating for 8 months. I wanted to confirm if the 6-month minimum operating requirement applies to innovation grants specifically or if it's different. Also, do you accept international founders?",
+    "date": "2026-06-25",
+    "read": true
+  },
+  {
+    "name": "Emily Davis",
+    "email": "emily.d@crafts.com",
+    "subject": "Documents required for application",
+    "message": "Hello, I've started my application for the small business grant but I'm unsure about what documents are needed. Could you please send me a checklist of required documents? Specifically, do I need to submit 3 years of tax returns or is 1 year sufficient for startups?",
+    "date": "2026-06-22",
+    "read": false
+  },
+  {
+    "name": "James Wilson",
+    "email": "james.w@landscaping.com",
+    "subject": "Application status inquiry",
+    "message": "I submitted my application two weeks ago (ID: APP-2026-004) and haven't heard back yet. Could you please provide an update on the status? I'm eager to move forward with my business expansion plans. Thank you for your time.",
+    "date": "2026-06-20",
+    "read": true
+  },
+  {
+    "name": "Amanda Torres",
+    "email": "amanda.t@creative.com",
+    "subject": "Technical issue with form submission",
+    "message": "Hi, I'm having trouble uploading my business plan document to the application form. The file is a 4MB PDF but it keeps failing to upload. I've tried on Chrome and Firefox. Can I email the document directly or is there another way to submit it?",
+    "date": "2026-06-18",
+    "read": false
+  },
+  {
+    "name": "Robert Johnson",
+    "email": "robert.j@mainstbake.com",
+    "subject": "Grant amount adjustment",
+    "message": "Hello, I submitted an application for $10,000 but after reviewing my business plan, I believe I need $15,000 to fully execute my expansion plans. Can I modify my application amount? Or do I need to submit a new application?",
+    "date": "2026-06-15",
+    "read": true
+  }
+]
