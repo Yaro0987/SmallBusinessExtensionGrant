@@ -1,0 +1,11 @@
+# SPA fallback - all non-file routes go to index.html
+/*    /index.html    200
+
+# Allow PHP files to be accessed
+/includes/*    /includes/:splat    200
+/admin/api/*   /admin/api/:splat    200
+/admin/pages/* /admin/pages/:splat  200
+/pages/*       /pages/:splat        200
+/support/*     /support/:splat      200
+/data/*        /data/:splat         200
+/assets/*      /assets/:splat       200

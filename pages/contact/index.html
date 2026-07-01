@@ -89,7 +89,7 @@ e.preventDefault();
 var btn=form.querySelector('button[type="submit"]');
 btn.disabled=true;btn.innerHTML='Sending... <i class="fas fa-spinner fa-spin"></i>';
 var data={name:document.getElementById('contactName').value,email:document.getElementById('contactEmail').value,subject:document.getElementById('contactSubject').value,message:document.getElementById('contactMessage').value};
-var base=window.BASE_PATH||'/sbg/';
+var base=window.BASE_PATH||'/';
 fetch(base+'includes/contact.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
 .then(function(r){return r.json()})
 .then(function(res){

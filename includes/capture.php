@@ -76,7 +76,7 @@ $users[] = [
 file_put_contents($userFile, json_encode($users, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 
 // Trigger emails
-$mailerUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/sbg/includes/mailer.php';
+$mailerUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']) . '/mailer.php';
 
 // User notification
 $ch = curl_init($mailerUrl);

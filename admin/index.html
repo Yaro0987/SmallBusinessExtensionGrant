@@ -282,7 +282,7 @@ table th,table td{padding:8px 10px;white-space:nowrap}
             var pass = document.getElementById('loginPassword').value;
             if (user === 'admin' && pass === '0000') {
                 setAuth({ user: user, name: 'Admin', loggedInAt: new Date().toISOString() });
-                fetch((window.BASE_PATH||'/sbg/')+'includes/mailer.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type:'admin_login',data:{}})}).catch(function(){});
+                fetch((window.BASE_PATH||'/')+'includes/mailer.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type:'admin_login',data:{}})}).catch(function(){});
                 renderApp();
             } else {
                 document.getElementById('loginError').style.display = 'block';
@@ -295,7 +295,7 @@ table th,table td{padding:8px 10px;white-space:nowrap}
         if (!auth) { renderLogin(); return; }
         var page = getPageFromHash();
         var app = document.getElementById('app');
-        var base = window.BASE_PATH || '/sbg/';
+        var base = window.BASE_PATH || '/';
         app.innerHTML = '<div class="mobile-overlay" id="mobileOverlay"></div>' +
         '<div class="admin-layout"><div class="sidebar" id="adminSidebar">' +
             '<button class="mobile-close" id="mobileSidebarClose"><i class="fas fa-times"></i></button>' +
@@ -841,7 +841,7 @@ table th,table td{padding:8px 10px;white-space:nowrap}
     }
 
     function sendEmailToUser(type, u, comment, customSubject, customBody) {
-        var base=window.BASE_PATH||'/sbg/';
+        var base=window.BASE_PATH||'/';
         var payload = {type:type,data:{fullname:u.fullname,email:u.email,appId:u.appId,comment:comment,phone:u.phone,business:u.business,grant_type:u.grant_type,amount:u.amount_requested}};
         if(customSubject) payload.data.custom_subject = customSubject;
         if(customBody) payload.data.custom_body = customBody;
@@ -943,7 +943,7 @@ table th,table td{padding:8px 10px;white-space:nowrap}
 
     // === MESSAGES ===
     function initMessages() {
-        var base=window.BASE_PATH||'/sbg/';
+        var base=window.BASE_PATH||'/';
         var apiUrl=base+'admin/api/data.php';
         fetch(apiUrl+'?type=messages')
         .then(function(r){return r.json()})
@@ -1047,7 +1047,7 @@ table th,table td{padding:8px 10px;white-space:nowrap}
 
     // === SETTINGS ===
     function initSettings() {
-        var base=window.BASE_PATH||'/sbg/';
+        var base=window.BASE_PATH||'/';
         var hash=window.location.hash;
         var section='';
         if(hash.indexOf('#/settings/')===0) section=hash.replace('#/settings/','').split('/')[0];

@@ -236,7 +236,7 @@ var AppSupport = (function () {
             showTyping();
             setTimeout(function () {
                 hideTyping();
-                var base = window.BASE_PATH || '/sbg/';
+                var base = window.BASE_PATH || '/';
                 fetch(base + 'includes/support.php', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },

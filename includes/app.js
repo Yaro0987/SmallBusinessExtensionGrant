@@ -150,7 +150,7 @@ var AppUI = (function () {
     }
 
     function initTracking() {
-        var base = window.BASE_PATH || '/sbg/';
+        var base = window.BASE_PATH || '/';
         var btn = document.getElementById('trackLookupBtn');
         var input = document.getElementById('trackAppId');
         var section = document.getElementById('trackResultSection');

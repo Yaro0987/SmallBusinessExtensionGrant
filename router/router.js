@@ -6,7 +6,7 @@ var AppRouter = (function () {
     var isLoaded = false;
 
     function base(url) {
-        return (window.BASE_PATH || '/sbg/').replace(/\/$/, '') + '/' + url.replace(/^\//, '');
+        return (window.BASE_PATH || '/').replace(/\/$/, '') + '/' + url.replace(/^\//, '');
     }
 
     var SEO = {
